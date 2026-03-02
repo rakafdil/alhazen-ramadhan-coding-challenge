@@ -22,7 +22,6 @@
 
   html {
     scroll-behavior: smooth;
-    /* scroll-padding-top: 80px; */
   }
 
   body {
@@ -65,14 +64,18 @@
     font-family: "Roboto Flex Variable", sans-serif;
   }
 
-  button {
+  button,
+  a.toggle-btn {
     font-family: "Cinzel Decorative", sans-serif;
   }
 </style>
 
-<body class="relative bg-(--bg-color)">
-  <nav class="nav-auto-hide fixed top-0 left-0 w-full z-100 flex items-center justify-between
-           px-4 md:px-12 py-4 backdrop-blur-md bg-[rgba(245,239,230,0.75)]">
+<body class="relative bg-(--bg-color) max-w-480 mx-auto">
+  <nav class="nav-auto-hide fixed top-0 left-1/2 -translate-x-1/2
+  w-full max-w-480
+  z-100 flex items-center justify-between
+  px-4 md:px-12 py-4
+  backdrop-blur-md bg-[rgba(245,239,230,0.75)]">
     <span class="text-lg font-semibold tracking-wide text-(--green)"
       style="font-family: 'Cinzel Decorative', sans-serif;">
       Ramadhan
@@ -91,7 +94,7 @@
   </nav>
 
   <main class="scroll-container h-screen overflow-y-scroll snap-y snap-mandatory">
-    <div
+    <div id="top"
       class="snap-start relative flex justify-center items-center z-10 h-screen px-6 md:px-20 lg:px-40 overflow-clip bg-(--bg-color)">
 
       <img class="absolute z-10 h-full w-auto md:h-full md:w-full object-cover" src="./assets/bg-hero.png"
@@ -102,7 +105,7 @@
         <img class="h-32 w-32 md:h-64 md:w-64 lg:h-96 lg:w-96" src="./assets/moon.png"
           style="filter: drop-shadow(5px 10px 2px rgba(0, 0, 0, 0.5));" />
         <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-(--green)"
-          style="filter: drop-shadow(2px 1px 1px rgba(0, 0, 0, 0.5));">KOLEKSI DOA RAMADHAN</h1>
+          style="filter: drop-shadow(2px 1px 1px rgba(0, 0, 0, 0.5));">RAMADHAN DUA COLLECTION</h1>
       </span>
     </div>
 
@@ -120,13 +123,13 @@
         </span>
       </span>
       <div class="flex flex-col pt-10 md:pt-24 lg:pt-40 self-center">
-        <div class="flex w-fit" style="
+        <div class="flex w-fit gap-10" style="
           border-radius: 48px;
           background: var(--linear-color-1);
           box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset;
           padding: 4px;
         ">
-          <div style="
+          <div class="group" style="
             border-radius: 48px;
             padding: 2px;
             background-image: url(./assets/golden-pattern.png);
@@ -135,12 +138,10 @@
             opacity: 1;
             position: relative;
           ">
-            <button id="btn-sahur" onclick="window.location.href='index.html#sahur'"
-              class="px-8 md:px-16 lg:px-20 py-2 md:py-3 text-base md:text-xl lg:text-2xl font-semibold transition-all duration-300 cursor-pointer"
+            <button id="btn-sahur" onclick="window.location.href='index.html#content-sahur'"
+              class="px-8 md:px-16 lg:px-20 py-2 md:py-3 text-base md:text-xl lg:text-2xl font-semibold transition-all duration-300 cursor-pointer bg-white text-(--gold) group-hover:bg-(--gold) group-hover:text-white"
               style="
               border-radius: 46px;
-              background: white;
-              color: var(--gold);
               position: relative;
               display: block;
               width: 100%;
@@ -148,15 +149,26 @@
               Sahoor
             </button>
           </div>
-          <button id="btn-buka" onclick="window.location.href='index.html#buka'"
-            class="px-8 md:px-16 lg:px-20 py-2 md:py-3 text-base md:text-xl lg:text-2xl font-semibold transition-all duration-300 cursor-pointer"
-            style="
+          <div class="group" style="
             border-radius: 48px;
-            background: transparent;
-            color: white;
+            padding: 2px;
+            background-image: url(./assets/golden-pattern.png);
+            background-blend-mode: lighten;
+            background-size: cover;
+            opacity: 1;
+            position: relative;
           ">
-            Iftar
-          </button>
+            <button id="btn-sahur" onclick="window.location.href='index.html#content-buka'"
+              class="px-8 md:px-16 lg:px-20 py-2 md:py-3 text-base md:text-xl lg:text-2xl font-semibold transition-all duration-300 cursor-pointer bg-white text-(--gold) group-hover:bg-(--gold) group-hover:text-white"
+              style="
+              border-radius: 46px;
+              position: relative;
+              display: block;
+              width: 100%;
+            ">
+              Iftar
+            </button>
+          </div>
         </div>
       </div>
       <span class="flex self-end mt-8 md:mt-20 lg:mt-30 text-(--gold) font-semibold text-sm md:text-base"
@@ -238,7 +250,7 @@
                       ‘alayh.</span>
                   </div>
                   <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
-                  <span class="self-end w-fit text-base md:text-xl">
+                  <span class="self-center w-fit text-base md:text-xl">
                     “I intend to fast today for the sake of Allah, with faith and sincere hope for His reward. O Allah,
                     accept it from me and help me to complete it.”
                   </span>
@@ -263,7 +275,7 @@
                       la quwwah.</span>
                   </div>
                   <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
-                  <span class="self-end w-fit text-base md:text-xl">
+                  <span class="self-center w-fit text-base md:text-xl">
                     “All praise is due to Allah who has fed me this and provided it for me without any power or strength
                     from myself.”
                   </span>
@@ -295,7 +307,7 @@
                     <span class="italic">Rabbana innana amanna faghfir lana dhunubana waqina ‘adhaban-nar.</span>
                   </div>
                   <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
-                  <span class="self-end w-fit text-base md:text-xl">
+                  <span class="self-center w-fit text-base md:text-xl">
                     “Our Lord, indeed we have believed, so forgive us our sins and protect us from the punishment of the
                     Fire.”
                   </span>
@@ -308,8 +320,200 @@
           </div>
         </div>
       </div>
+
+      <div class="w-3/4 mx-auto h-1 bg-(--gold) mb-30"></div>
+
+      <div id="content-buka" class="relative flex flex-col md:flex-row mt-4 gap-6 md:gap-14 pb-10 md:pb-30">
+        <div class="flex flex-col w-full md:w-1/4 md:sticky top-12 h-fit gap-4">
+          <button
+            class="group flex justify-between items-center gap-3 rounded-4xl text-white px-4 py-3 md:px-6 md:py-4 lg:px-10 lg:py-6 w-full cursor-pointer font-semibold hover:scale-101 text-xs md:text-sm lg:text-base"
+            style="background: var(--linear-color-1)" onclick="window.location.href='#item-4'">
+            <span class="text-left leading-snug">The Primary Dua for Iftar</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 37 37" fill="none"
+              class="shrink-0 transition-transform duration-300 group-hover:translate-x-2">
+              <path
+                d="M0 18.2812C0 28.3799 8.18262 36.5625 18.2812 36.5625C28.3799 36.5625 36.5625 28.3799 36.5625 18.2812C36.5625 8.18262 28.3799 0 18.2812 0C8.18262 0 0 8.18262 0 18.2812ZM21.4893 18.2812L14.291 11.1533C13.6318 10.4941 13.6318 9.41309 14.291 8.75391C14.9502 8.09473 16.0312 8.09473 16.6904 8.75391L25.0752 17.165C25.7168 17.8066 25.7344 18.8437 25.1279 19.5029L16.8662 27.791C16.5322 28.125 16.1016 28.292 15.6621 28.292C15.2314 28.292 14.792 28.125 14.4668 27.7998C13.8076 27.1406 13.7988 26.0684 14.4668 25.4004L21.4893 18.2812Z"
+                fill="white" />
+            </svg>
+          </button>
+
+          <button
+            class="group flex justify-between items-center gap-3 rounded-4xl text-white px-4 py-3 md:px-6 md:py-4 lg:px-10 lg:py-6 w-full cursor-pointer font-semibold hover:scale-101 text-xs md:text-sm lg:text-base"
+            style="background: var(--linear-color-1)" onclick="window.location.href='#item-5'">
+            <span class="text-left leading-snug">Dua Narrated by Abdullah ibn Amr at Iftar</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 37 37" fill="none"
+              class="shrink-0 transition-transform duration-300 group-hover:translate-x-2">
+              <path
+                d="M0 18.2812C0 28.3799 8.18262 36.5625 18.2812 36.5625C28.3799 36.5625 36.5625 28.3799 36.5625 18.2812C36.5625 8.18262 28.3799 0 18.2812 0C8.18262 0 0 8.18262 0 18.2812ZM21.4893 18.2812L14.291 11.1533C13.6318 10.4941 13.6318 9.41309 14.291 8.75391C14.9502 8.09473 16.0312 8.09473 16.6904 8.75391L25.0752 17.165C25.7168 17.8066 25.7344 18.8437 25.1279 19.5029L16.8662 27.791C16.5322 28.125 16.1016 28.292 15.6621 28.292C15.2314 28.292 14.792 28.125 14.4668 27.7998C13.8076 27.1406 13.7988 26.0684 14.4668 25.4004L21.4893 18.2812Z"
+                fill="white" />
+            </svg>
+          </button>
+
+          <button
+            class="group flex justify-between items-center gap-3 rounded-4xl text-white px-4 py-3 md:px-6 md:py-4 lg:px-10 lg:py-6 w-full cursor-pointer font-semibold hover:scale-101 text-xs md:text-sm lg:text-base"
+            style="background: var(--linear-color-1)" onclick="window.location.href='#item-6'">
+            <span class="text-left leading-snug">Saying Bismillah Before Eating at Iftar</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 37 37" fill="none"
+              class="shrink-0 transition-transform duration-300 group-hover:translate-x-2">
+              <path
+                d="M0 18.2812C0 28.3799 8.18262 36.5625 18.2812 36.5625C28.3799 36.5625 36.5625 28.3799 36.5625 18.2812C36.5625 8.18262 28.3799 0 18.2812 0C8.18262 0 0 8.18262 0 18.2812ZM21.4893 18.2812L14.291 11.1533C13.6318 10.4941 13.6318 9.41309 14.291 8.75391C14.9502 8.09473 16.0312 8.09473 16.6904 8.75391L25.0752 17.165C25.7168 17.8066 25.7344 18.8437 25.1279 19.5029L16.8662 27.791C16.5322 28.125 16.1016 28.292 15.6621 28.292C15.2314 28.292 14.792 28.125 14.4668 27.7998C13.8076 27.1406 13.7988 26.0684 14.4668 25.4004L21.4893 18.2812Z"
+                fill="white" />
+            </svg>
+          </button>
+
+          <button
+            class="group flex justify-between items-center gap-3 rounded-4xl text-white px-4 py-3 md:px-6 md:py-4 lg:px-10 lg:py-6 w-full cursor-pointer font-semibold hover:scale-101 text-xs md:text-sm lg:text-base"
+            style="background: var(--linear-color-1)" onclick="window.location.href='#item-7'">
+            <span class="text-left leading-snug">Dua After Finishing the Meal</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 37 37" fill="none"
+              class="shrink-0 transition-transform duration-300 group-hover:translate-x-2">
+              <path
+                d="M0 18.2812C0 28.3799 8.18262 36.5625 18.2812 36.5625C28.3799 36.5625 36.5625 28.3799 36.5625 18.2812C36.5625 8.18262 28.3799 0 18.2812 0C8.18262 0 0 8.18262 0 18.2812ZM21.4893 18.2812L14.291 11.1533C13.6318 10.4941 13.6318 9.41309 14.291 8.75391C14.9502 8.09473 16.0312 8.09473 16.6904 8.75391L25.0752 17.165C25.7168 17.8066 25.7344 18.8437 25.1279 19.5029L16.8662 27.791C16.5322 28.125 16.1016 28.292 15.6621 28.292C15.2314 28.292 14.792 28.125 14.4668 27.7998C13.8076 27.1406 13.7988 26.0684 14.4668 25.4004L21.4893 18.2812Z"
+                fill="white" />
+            </svg>
+          </button>
+        </div>
+
+        <div
+          class="relative flex flex-col w-full md:w-3/4 border border-(--gold) rounded-3xl justify-center align-middle py-10 md:py-24 overflow-clip px-6 md:px-12 bg-orange-100/20">
+          <div>
+            <img class="hidden md:block absolute top-0 right-0 w-40 lg:w-60"
+              src="./assets/islamic-corner-pattern.png" />
+            <img class="hidden md:block absolute top-0 left-0 w-40 lg:w-60 transform -scale-x-100"
+              src="./assets/islamic-corner-pattern.png" />
+          </div>
+          <h1 class="font-bold text-2xl md:text-4xl lg:text-5xl self-center">DUA FOR IFTAR</h1>
+          <div class="mt-8 md:mt-20 lg:mt-40">
+            <div class="flex flex-col gap-14">
+              <div class="flex flex-col gap-10 text-black/80" id="item-4">
+                <div class="flex flex-col gap-4">
+                  <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">1. The Primary Dua for Breaking the Fast (Iftar)
+                  </h2>
+                  <span class="text-left">The most well-known and authentically narrated dua for breaking the fast comes
+                    from the hadith of Abdullah ibn Umar (may Allah be pleased with him). He reported that the Messenger
+                    of Allah (ﷺ) used to say the following words when he broke his fast:</span>
+                </div>
+                <div
+                  class="flex flex-col justify-center text-center border border-(--gold)/60 rounded-xl p-4 py-10 bg-white">
+                  <div class="flex flex-col gap-10">
+                    <span class="text-2xl md:text-3xl lg:text-4xl font-bold" style="line-height: 1.8;">ذَهَبَ الظَّمَأُ
+                      وَابْتَلَّتِ الْعُرُوقُ وَثَبَتَ الْأَجْرُ إِنْ شَاءَ اللَّهُ</span>
+                    <span class="italic">Dhahaba aẓ-ẓama'u wabtallatil-'urūqu wa thabata al-ajru in shā'a Allāh.</span>
+                  </div>
+                  <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
+                  <span class="self-center w-fit text-base md:text-xl">
+                    "Thirst is gone, the veins are moistened, and the reward is certain, if Allah wills."
+                  </span>
+                  <a class="self-end mt-10 text-gray-600 relative after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full transition-all duration-300 hover:text-(--gold)"
+                    href="https://sunnah.com/abudawud:2357">Sunan Abu Dawud 2357 ↗</a>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-10 text-black/80" id="item-5">
+                <div class="flex flex-col gap-4">
+                  <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">2. Dua Narrated by Abdullah ibn Amr at Iftar
+                  </h2>
+                  <span class="text-left">Another beautiful supplication for iftar comes from the great companion
+                    Abdullah ibn Amr ibn al-As (may Allah be pleased with him). Ibn Abi Mulaikah reported that when
+                    Abdullah ibn Amr broke his fast, he would make this heartfelt dua:</span>
+                </div>
+                <div
+                  class="flex flex-col justify-center text-center border border-(--gold)/60 rounded-xl p-4 py-10 bg-white">
+                  <div class="flex flex-col gap-10">
+                    <span class="text-2xl md:text-3xl lg:text-4xl font-bold" style="line-height: 1.8;">اللَّهُمَّ إِنِّي
+                      أَسْأَلُكَ بِرَحْمَتِكَ الَّتِي وَسِعَتْ كُلَّ شَيْءٍ أَنْ تَغْفِرَ لِي</span>
+                    <span class="italic">Allāhumma innī as'aluka bi-raḥmatikal-latī wasi'at kulla shay'in an taghfira
+                      lī.</span>
+                  </div>
+                  <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
+                  <span class="self-center w-fit text-base md:text-xl">
+                    “All praise is due to Allah who has fed me this and provided it for me without any power or strength
+                    from myself.”
+                  </span>
+                  <a class="self-end mt-10 text-gray-600 relative after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full transition-all duration-300 hover:text-(--gold)"
+                    href="https://sunnah.com/ibnmajah:1753">Sunan Ibn Majah 1753 ↗</a>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-10 text-black/80" id="item-6">
+                <div class="flex flex-col gap-4">
+                  <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">3. Saying Bismillah Before Eating at Iftar
+                  </h2>
+                  <span class="text-left">Beyond the specific iftar duas, it is a confirmed Sunnah to say "Bismillah"
+                    (In the Name of Allah) before beginning to eat. This applies to every meal, but it carries special
+                    significance at iftar when breaking the sacred fast. <br /> <br /> The Prophet (ﷺ) instructed Umar
+                    ibn Abi Salamah (may Allah be pleased with him): "Mention the Name of Allah (say Bismillah), eat
+                    with your right hand, and eat from what is near you." This hadith, agreed upon by both Bukhari and
+                    Muslim, establishes saying Bismillah before eating as one of the essential etiquettes of dining in
+                    Islam.</span>
+                </div>
+                <div
+                  class="flex flex-col justify-center text-center border border-(--gold)/60 rounded-xl p-4 py-10 bg-white">
+                  <div class="flex flex-col gap-10">
+                    <span class="text-2xl md:text-3xl lg:text-4xl font-bold" style="line-height: 1.8;">بِسْمِ
+                      اللَّهِ</span>
+                    <span class="italic">Bismillāh.</span>
+                  </div>
+                  <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
+                  <span class="self-center w-fit text-base md:text-xl">
+                    "In the Name of Allah."
+                  </span>
+                  <a class="self-end mt-10 text-gray-600 relative after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full transition-all duration-300 hover:text-(--gold)"
+                    href="https://sunnah.com/bukhari:5376">Sahih al-Bukhari 5376 ↗</a>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-10 text-black/80" id="item-7">
+                <div class="flex flex-col gap-4">
+                  <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">5. Dua After Finishing the Meal
+                  </h2>
+                  <span class="text-left">After completing your iftar meal, it is also Sunnah to express gratitude to
+                    Allah for the provision. The Prophet (ﷺ) taught us this beautiful dua to say after eating:</span>
+                </div>
+                <div
+                  class="flex flex-col justify-center text-center border border-(--gold)/60 rounded-xl p-4 py-10 bg-white">
+                  <div class="flex flex-col gap-10">
+                    <span class="text-2xl md:text-3xl lg:text-4xl font-bold" style="line-height: 1.8;">الْحَمْدُ لِلَّهِ
+                      الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ</span>
+                    <span class="italic">Al-ḥamdu lillāhil-ladhī aṭ'amanī hādhā wa razaqanīhi min ghayri ḥawlin minnī wa
+                      lā quwwah.</span>
+                  </div>
+                  <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
+                  <span class="self-center w-fit text-base md:text-xl">
+                    "Praise be to Allah who fed me this and provided it for me without any might or power on my part."
+                  </span>
+                  <a class="self-end mt-10 text-gray-600 relative after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full transition-all duration-300 hover:text-(--gold)"
+                    href="https://sunnah.com/abudawud:4023">Sunan Abu Dawud 4023 ↗</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <footer
+      class="snap-start relative flex justify-between items-end overflow-hidden bg-(--bg-color) border-t border-(--gold)/40 px-10 md:px-20 pb-0">
+      <div class="flex flex-col gap-2 pb-10 z-10">
+        <span class="text-xs md:text-sm font-medium text-(--gold)/70 tracking-widest uppercase"
+          style="font-family: var(--caligraphy-font);">Crafted with sincerity</span>
+        <h1 class="font-bold text-2xl md:text-4xl text-(--green)">
+          Muhammad Raka<br />Fadillah
+        </h1>
+        <span class="text-sm text-black/40 mt-1">Ramadhan Coding Challenge &copy; 1447 H</span>
+      </div>
+      <img class="h-48 md:h-64 lg:h-80 w-auto object-contain self-end opacity-80" src="./assets/masjid.png" />
+    </footer>
   </main>
+
+  <a href="#top"
+    class="fixed bottom-6 right-6 z-200 flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+    style="background: var(--linear-color-1);">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+      stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </a>
 
 
 </body>
