@@ -1,0 +1,317 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ramadhan Coding Challenge</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<style>
+  @import url("https://fonts.cdnfonts.com/css/cinzel-decorative");
+  @import url("https://cdn.jsdelivr.net");
+
+  :root {
+    --cream: rgba(245, 239, 230, 1);
+    --green: rgba(46, 125, 90, 1);
+    --gold: rgba(198, 168, 91, 1);
+    --bg-color: #fbfae8;
+    --linear-color-1: linear-gradient(90deg, #D4AF37 0%, #F9E498 100%);
+    --caligraphy-font: "Cinzel Decorative", sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* scroll-padding-top: 80px; */
+  }
+
+  body {
+    timeline-scope: --main-scroll;
+  }
+
+  @keyframes hide-nav {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(-100%);
+    }
+  }
+
+  .nav-auto-hide {
+    animation: hide-nav linear both;
+    animation-timeline: --main-scroll;
+    animation-range: 80px 500px;
+    z-index: 100;
+  }
+
+  .scroll-container {
+    scroll-timeline-name: --main-scroll;
+    scroll-behavior: smooth;
+  }
+
+  [id] {
+    scroll-margin-top: 60px;
+  }
+
+  h1 {
+    font-family: "Cinzel Decorative", sans-serif;
+    line-height: 1.2;
+  }
+
+  h2,
+  p {
+    font-family: "Roboto Flex Variable", sans-serif;
+  }
+
+  button {
+    font-family: "Cinzel Decorative", sans-serif;
+  }
+</style>
+
+<body class="relative bg-(--bg-color)">
+  <nav class="nav-auto-hide fixed top-0 left-0 w-full z-100 flex items-center justify-between
+           px-4 md:px-12 py-4 backdrop-blur-md bg-[rgba(245,239,230,0.75)]">
+    <span class="text-lg font-semibold tracking-wide text-(--green)"
+      style="font-family: 'Cinzel Decorative', sans-serif;">
+      Ramadhan
+    </span>
+
+    <div class="flex gap-8 text-sm font-medium text-(--green)">
+      <a class="relative after:absolute after:-bottom-1 after:left-0 after:h-0.5
+                after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full">
+        Beranda
+      </a>
+      <a class="relative after:absolute after:-bottom-1 after:left-0 after:h-0.5
+                after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full">
+        Doa
+      </a>
+    </div>
+  </nav>
+
+  <main class="scroll-container h-screen overflow-y-scroll snap-y snap-mandatory">
+    <div
+      class="snap-start relative flex justify-center items-center z-10 h-screen px-6 md:px-20 lg:px-40 overflow-clip bg-(--bg-color)">
+
+      <img class="absolute z-10 h-full w-auto md:h-full md:w-full object-cover" src="./assets/bg-hero.png"
+        style="filter: drop-shadow(1px 10px 10px rgba(0, 0, 0, 0.5));">
+      <img class="absolute opacity-10 z-0 w-full h-full object-cover" src="./assets/golden-pattern.png">
+
+      <span class="flex flex-col items-center md:flex-row z-50 gap-4 md:gap-10 text-center md:text-left">
+        <img class="h-32 w-32 md:h-64 md:w-64 lg:h-96 lg:w-96" src="./assets/moon.png"
+          style="filter: drop-shadow(5px 10px 2px rgba(0, 0, 0, 0.5));" />
+        <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-(--green)"
+          style="filter: drop-shadow(2px 1px 1px rgba(0, 0, 0, 0.5));">KOLEKSI DOA RAMADHAN</h1>
+      </span>
+    </div>
+
+    <div class="snap-start relative flex flex-col min-h-screen px-4 md:px-10 lg:px-20 z-0"
+      style="scroll-padding-top: 80px;">
+      <span class="relative hidden md:flex justify-between w-full z-10">
+        <span class="flex absolute left-0 -top-2" style="filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));">
+          <img src="./assets/lamp.png" class="h-50" />
+          <img src="./assets/star.png" class="relative h-50 -top-10" />
+        </span>
+        <span class="flex flex-row-reverse absolute right-0 -top-2"
+          style="filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));">
+          <img src="./assets/lamp.png" class="h-50" />
+          <img src="./assets/star.png" class="transform -scale-x-100 relative h-50 -top-10" />
+        </span>
+      </span>
+      <div class="flex flex-col pt-10 md:pt-24 lg:pt-40 self-center">
+        <div class="flex w-fit" style="
+          border-radius: 48px;
+          background: var(--linear-color-1);
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset;
+          padding: 4px;
+        ">
+          <div style="
+            border-radius: 48px;
+            padding: 2px;
+            background-image: url(./assets/golden-pattern.png);
+            background-blend-mode: lighten;
+            background-size: cover;
+            opacity: 1;
+            position: relative;
+          ">
+            <button id="btn-sahur" onclick="window.location.href='index.html#sahur'"
+              class="px-8 md:px-16 lg:px-20 py-2 md:py-3 text-base md:text-xl lg:text-2xl font-semibold transition-all duration-300 cursor-pointer"
+              style="
+              border-radius: 46px;
+              background: white;
+              color: var(--gold);
+              position: relative;
+              display: block;
+              width: 100%;
+            ">
+              Sahoor
+            </button>
+          </div>
+          <button id="btn-buka" onclick="window.location.href='index.html#buka'"
+            class="px-8 md:px-16 lg:px-20 py-2 md:py-3 text-base md:text-xl lg:text-2xl font-semibold transition-all duration-300 cursor-pointer"
+            style="
+            border-radius: 48px;
+            background: transparent;
+            color: white;
+          ">
+            Iftar
+          </button>
+        </div>
+      </div>
+      <span class="flex self-end mt-8 md:mt-20 lg:mt-30 text-(--gold) font-semibold text-sm md:text-base"
+        style="font-family: var(--caligraphy-font);">Ahad,
+        13
+        Ramadan
+        1447</span>
+      <div id="content-sahur" class="relative flex flex-col md:flex-row mt-4 gap-6 md:gap-14 pb-10 md:pb-30">
+        <div class="flex flex-col w-full md:w-1/4 md:sticky top-12 h-fit gap-4">
+          <button
+            class="group flex justify-between items-center gap-3 rounded-4xl text-white px-4 py-3 md:px-6 md:py-4 lg:px-10 lg:py-6 w-full cursor-pointer font-semibold hover:scale-101 text-xs md:text-sm lg:text-base"
+            style="background: var(--linear-color-1)" onclick="window.location.href='#item-1'">
+            <span class="text-left leading-snug">The Intention to Fast</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 37 37" fill="none"
+              class="shrink-0 transition-transform duration-300 group-hover:translate-x-2">
+              <path
+                d="M0 18.2812C0 28.3799 8.18262 36.5625 18.2812 36.5625C28.3799 36.5625 36.5625 28.3799 36.5625 18.2812C36.5625 8.18262 28.3799 0 18.2812 0C8.18262 0 0 8.18262 0 18.2812ZM21.4893 18.2812L14.291 11.1533C13.6318 10.4941 13.6318 9.41309 14.291 8.75391C14.9502 8.09473 16.0312 8.09473 16.6904 8.75391L25.0752 17.165C25.7168 17.8066 25.7344 18.8437 25.1279 19.5029L16.8662 27.791C16.5322 28.125 16.1016 28.292 15.6621 28.292C15.2314 28.292 14.792 28.125 14.4668 27.7998C13.8076 27.1406 13.7988 26.0684 14.4668 25.4004L21.4893 18.2812Z"
+                fill="white" />
+            </svg>
+          </button>
+
+          <button
+            class="group flex justify-between items-center gap-3 rounded-4xl text-white px-4 py-3 md:px-6 md:py-4 lg:px-10 lg:py-6 w-full cursor-pointer font-semibold hover:scale-101 text-xs md:text-sm lg:text-base"
+            style="background: var(--linear-color-1)" onclick="window.location.href='#item-2'">
+            <span class="text-left leading-snug">Expressing Gratitude for Divine Provision</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 37 37" fill="none"
+              class="shrink-0 transition-transform duration-300 group-hover:translate-x-2">
+              <path
+                d="M0 18.2812C0 28.3799 8.18262 36.5625 18.2812 36.5625C28.3799 36.5625 36.5625 28.3799 36.5625 18.2812C36.5625 8.18262 28.3799 0 18.2812 0C8.18262 0 0 8.18262 0 18.2812ZM21.4893 18.2812L14.291 11.1533C13.6318 10.4941 13.6318 9.41309 14.291 8.75391C14.9502 8.09473 16.0312 8.09473 16.6904 8.75391L25.0752 17.165C25.7168 17.8066 25.7344 18.8437 25.1279 19.5029L16.8662 27.791C16.5322 28.125 16.1016 28.292 15.6621 28.292C15.2314 28.292 14.792 28.125 14.4668 27.7998C13.8076 27.1406 13.7988 26.0684 14.4668 25.4004L21.4893 18.2812Z"
+                fill="white" />
+            </svg>
+          </button>
+
+          <button
+            class="group flex justify-between items-center gap-3 rounded-4xl text-white px-4 py-3 md:px-6 md:py-4 lg:px-10 lg:py-6 w-full cursor-pointer font-semibold hover:scale-101 text-xs md:text-sm lg:text-base"
+            style="background: var(--linear-color-1)" onclick="window.location.href='#item-3'">
+            <span class="text-left leading-snug">The Accepted Supplication of the Fasting Person</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 37 37" fill="none"
+              class="shrink-0 transition-transform duration-300 group-hover:translate-x-2">
+              <path
+                d="M0 18.2812C0 28.3799 8.18262 36.5625 18.2812 36.5625C28.3799 36.5625 36.5625 28.3799 36.5625 18.2812C36.5625 8.18262 28.3799 0 18.2812 0C8.18262 0 0 8.18262 0 18.2812ZM21.4893 18.2812L14.291 11.1533C13.6318 10.4941 13.6318 9.41309 14.291 8.75391C14.9502 8.09473 16.0312 8.09473 16.6904 8.75391L25.0752 17.165C25.7168 17.8066 25.7344 18.8437 25.1279 19.5029L16.8662 27.791C16.5322 28.125 16.1016 28.292 15.6621 28.292C15.2314 28.292 14.792 28.125 14.4668 27.7998C13.8076 27.1406 13.7988 26.0684 14.4668 25.4004L21.4893 18.2812Z"
+                fill="white" />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="relative flex flex-col w-full md:w-3/4 border border-(--gold) rounded-3xl justify-center align-middle py-10 md:py-24 overflow-clip px-6 md:px-12 bg-orange-100/20">
+          <div>
+            <img class="hidden md:block absolute top-0 right-0 w-40 lg:w-60"
+              src="./assets/islamic-corner-pattern.png" />
+            <img class="hidden md:block absolute top-0 left-0 w-40 lg:w-60 transform -scale-x-100"
+              src="./assets/islamic-corner-pattern.png" />
+          </div>
+          <h1 class="font-bold text-2xl md:text-4xl lg:text-5xl self-center">DUA FOR SUHOOR</h1>
+          <div class="mt-8 md:mt-20 lg:mt-40">
+            <div class="flex flex-col gap-14">
+              <div class="flex flex-col gap-10 text-black/80" id="item-1">
+                <div class="flex flex-col gap-4">
+                  <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">1. The Intention to Fast</h2>
+                  <span class="text-left">Every act of worship in Islam is founded upon intention. The Prophet ﷺ said,
+                    “Actions are only by
+                    intentions.” The Niyyah is fundamentally an action of the heart, a conscious resolve made for the
+                    sake
+                    of Allah alone. While verbal articulation is not obligatory, many scholars permitted expressing it
+                    verbally as a means of strengthening focus and mindfulness before the arrival of Fajr. At the time
+                    of
+                    Suhoor, one renews this covenant of servitude and obedience.</span>
+                </div>
+                <div
+                  class="flex flex-col justify-center text-center border border-(--gold)/60 rounded-xl p-4 py-10 bg-white">
+                  <div class="flex flex-col gap-10">
+                    <span class="text-2xl md:text-3xl lg:text-4xl font-bold" style="line-height: 1.8;">نَوَيْتُ صِيَامَ
+                      هَذَا الْيَوْمِ لِلّٰهِ
+                      تَعَالَى إِيمَانًا
+                      وَاحْتِسَابًا، يَا رَبِّ تَقَبَّلْهُ
+                      مِنِّي وَأَعِنِّي عَلَيْهِ</span>
+                    <span class="italic">Nawaytu siyāma hādhā al-yawm lillāhi ta‘ālā īmānan waḥtisāban, Yā Rabbi
+                      taqabbalhu minnī wa a‘innī
+                      ‘alayh.</span>
+                  </div>
+                  <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
+                  <span class="self-end w-fit text-base md:text-xl">
+                    “I intend to fast today for the sake of Allah, with faith and sincere hope for His reward. O Allah,
+                    accept it from me and help me to complete it.”
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-10 text-black/80" id="item-2">
+                <div class="flex flex-col gap-4">
+                  <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">2. Expressing Gratitude for Divine Provision
+                  </h2>
+                  <span class="text-left">To awaken before dawn and find sustenance prepared is itself a manifestation
+                    of divine generosity. The believer recognizes that provision is not merely the result of personal
+                    effort but a gift from Ar-Razzaq, the Ultimate Provider. Gratitude at the time of Suhoor invites
+                    increase, protects from heedlessness, and instills humility in the heart.</span>
+                </div>
+                <div
+                  class="flex flex-col justify-center text-center border border-(--gold)/60 rounded-xl p-4 py-10 bg-white">
+                  <div class="flex flex-col gap-10">
+                    <span class="text-2xl md:text-3xl lg:text-4xl font-bold" style="line-height: 1.8;">الْحَمْدُ لِلَّهِ
+                      الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ</span>
+                    <span class="italic">Alhamdulillahil-ladhi at‘amani hadha, wa razaqanihi min ghayri hawlin minni wa
+                      la quwwah.</span>
+                  </div>
+                  <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
+                  <span class="self-end w-fit text-base md:text-xl">
+                    “All praise is due to Allah who has fed me this and provided it for me without any power or strength
+                    from myself.”
+                  </span>
+                  <a class="self-end mt-10 text-gray-600 relative after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full transition-all duration-300 hover:text-(--gold)"
+                    href="https://sunnah.com/tirmidhi:3458">Jami‘ at-Tirmidhi 3458 ↗</a>
+                </div>
+              </div>
+
+              <div class="flex flex-col gap-10 text-black/80" id="item-3">
+                <div class="flex flex-col gap-4">
+                  <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">3. Seeking Forgiveness in the Last Third of the
+                    Night
+                  </h2>
+                  <span class="text-left">Suhoor coincides with the most spiritually potent segment of the night, the
+                    final third, known in the tradition as the time of Tahajjud. In rigorously authentic narrations, the
+                    Prophet ﷺ informed us that during this time Allah calls out in a manner befitting His Majesty: “Who
+                    is calling upon Me so that I may answer him? Who is asking Me so that I may give him? Who is seeking
+                    My forgiveness so that I may forgive him?” <br /> <br /> This is a sacred invitation. Before the
+                    Fajr
+                    adhan, let the tongue be moistened with Istighfar and the heart humbled in repentance. Seek
+                    forgiveness for yourself, your family, and the Ummah at large. Ramadan is a month of liberation from
+                    sin and renewal of spiritual life.</span>
+                </div>
+                <div
+                  class="flex flex-col justify-center text-center border border-(--gold)/60 rounded-xl p-4 py-10 bg-white">
+                  <div class="flex flex-col gap-10">
+                    <span class="text-2xl md:text-3xl lg:text-4xl font-bold" style="line-height: 1.8;">رَبَّنَا إِنَّنَا
+                      آمَنَّا فَاغْفِرْ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ النَّارِ</span>
+                    <span class="italic">Rabbana innana amanna faghfir lana dhunubana waqina ‘adhaban-nar.</span>
+                  </div>
+                  <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
+                  <span class="self-end w-fit text-base md:text-xl">
+                    “Our Lord, indeed we have believed, so forgive us our sins and protect us from the punishment of the
+                    Fire.”
+                  </span>
+                  <a class="self-end mt-10 text-gray-600 relative after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full transition-all duration-300 hover:text-(--gold)"
+                    href="https://quran.com/3/16">Surah Aal ‘Imran 3:16 ↗</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+</body>
+
+</html>
