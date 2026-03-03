@@ -65,35 +65,36 @@
             <img class="absolute opacity-10 z-0 w-full h-full object-cover will-change-transform"
                 src="./assets/golden-pattern.png" style="transform: translateZ(0);">
 
-            <span class="flex flex-col items-center md:flex-row z-50 gap-4 md:gap-10 text-center md:text-left">
-                <img class="h-32 w-32 md:h-64 md:w-64 lg:h-96 lg:w-96" src="./assets/moon.png"
+            <span class="flex flex-col items-center md:flex-row z-50 gap-10 text-center md:text-left">
+                <img class="h-40 w-40 md:h-64 md:w-64 lg:h-96 lg:w-96" src="./assets/moon.png"
                     style="filter: drop-shadow(5px 10px 2px rgba(0, 0, 0, 0.5));" />
-                <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-(--green)"
+                <h1 class="text-5xl md:text-6xl lg:text-8xl font-bold text-(--green)"
                     style="filter: drop-shadow(2px 1px 1px rgba(0, 0, 0, 0.5));">DHIKR COUNTER</h1>
             </span>
         </div>
 
         <div class="snap-start relative flex flex-col min-h-screen px-4 md:px-10 lg:px-20 z-0"
             style="scroll-padding-top: 80px;">
-            <span class="relative md:flex justify-between w-full z-10 hidden">
+            <span class="relative md:flex justify-between w-full z-10">
                 <span class="flex absolute left-0 -top-2" style="filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));">
-                    <img src="./assets/lamp.png" class="h-50" />
-                    <img src="./assets/star.png" class="relative h-50 -top-10" />
+                    <img src="./assets/lamp.png" class="h-25 md:h-50" />
+                    <img src="./assets/star.png" class="relative h-25 md:h-50 md:-top-10 -top-2 " />
                 </span>
                 <span class="flex flex-row-reverse absolute right-0 -top-2"
                     style="filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));">
-                    <img src="./assets/lamp.png" class="h-50" />
-                    <img src="./assets/star.png" class="transform -scale-x-100 relative h-50 -top-10" />
+                    <img src="./assets/lamp.png" class="h-25 md:h-50" />
+                    <img src="./assets/star.png"
+                        class="transform -scale-x-100 relative h-25 md:h-50 md:-top-10 -top-2" />
                 </span>
             </span>
 
-            <div class="flex flex-col mt-0 lg:my-60">
+            <div class="flex flex-col mt-30 lg:my-60">
                 <span class="flex self-end text-(--gold) font-semibold text-sm md:text-base"
                     style="font-family: var(--caligraphy-font);">Ahad, 13 Ramadan 1447</span>
 
-                <section class="flex gap-5 self-center">
+                <section class="flex gap-5 self-center mt-10 md:mt-0">
                     <button id="prev-btn"
-                        class="scale-40 md:scale-80 cursor-pointer active:scale-85 transition-all duration-300">
+                        class="scale-40 md:scale-80 cursor-pointer md:active:scale-85 active:scale-45 transition-all duration-300">
                         <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M67.0625 37C67.0625 53.6066 53.6066 67.0625 37 67.0625C20.3934 67.0625 6.9375 53.6066 6.9375 37C6.9375 20.3934 20.3934 6.9375 37 6.9375C53.6066 6.9375 67.0625 20.3934 67.0625 37ZM31.7246 37L43.5617 25.2785C44.6457 24.1945 44.6457 22.4168 43.5617 21.3328C42.4777 20.2488 40.7 20.2488 39.616 21.3328L25.8277 35.1645C24.7727 36.2195 24.7438 37.925 25.741 39.009L39.327 52.6383C39.8762 53.1875 40.5844 53.4621 41.307 53.4621C42.0152 53.4621 42.7379 53.1875 43.2727 52.6527C44.3566 51.5687 44.3711 49.8055 43.2727 48.707L31.7246 37Z"
@@ -114,7 +115,7 @@
                     </span>
 
                     <button id="next-btn"
-                        class="scale-40 md:scale-80 cursor-pointer active:scale-85 transition-all duration-300">
+                        class="scale-40 md:scale-80 cursor-pointer md:active:scale-85 active:scale-45 transition-all duration-300">
                         <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M6.9375 37C6.9375 53.6066 20.3934 67.0625 37 67.0625C53.6066 67.0625 67.0625 53.6066 67.0625 37C67.0625 20.3934 53.6066 6.9375 37 6.9375C20.3934 6.9375 6.9375 20.3934 6.9375 37ZM42.2754 37L30.4383 25.2785C29.3543 24.1945 29.3543 22.4168 30.4383 21.3328C31.5223 20.2488 33.3 20.2488 34.384 21.3328L48.1723 35.1645C49.2273 36.2195 49.2562 37.925 48.259 39.009L34.673 52.6383C34.1238 53.1875 33.4156 53.4621 32.693 53.4621C31.9848 53.4621 31.2621 53.1875 30.7273 52.6527C29.6434 51.5687 29.6289 49.8055 30.7273 48.707L42.2754 37Z"
@@ -123,8 +124,11 @@
                     </button>
                 </section>
 
-                <section class="relative flex flex-col self-center mt-20 max-w-3xl min-w-3xl rounded-2xl bg-[#319D6D] px-10 py-10"
-                    style="
+                <section class="relative flex flex-col self-center mt-12 sm:mt-14
+                                w-full max-w-88 sm:max-w-sm md:max-w-3xl md:min-w-3xl
+                                rounded-2xl bg-[#319D6D]
+                                px-4 sm:px-8 md:px-10
+                                py-6 md:py-10" style="
                     box-shadow:
                         0 4px 6px rgba(0, 0, 0, 0.25),
                         inset 0 4px 12px rgba(255, 255, 255, 0.25);
@@ -141,9 +145,9 @@
                                 d="M69.699 31.7296C68.5356 30.5137 67.3321 29.2609 66.8784 28.1592C66.4588 27.1501 66.4341 25.4775 66.4094 23.8574C66.3631 20.8455 66.3137 17.4325 63.9406 15.0594C61.5675 12.6863 58.1545 12.6369 55.1426 12.5906C53.5225 12.5659 51.8499 12.5412 50.8408 12.1216C49.7422 11.6679 48.4862 10.4644 47.2704 9.30102C45.1411 7.25504 42.7217 4.9375 39.5 4.9375C36.2783 4.9375 33.862 7.25504 31.7296 9.30102C30.5137 10.4644 29.2609 11.6679 28.1592 12.1216C27.1562 12.5412 25.4775 12.5659 23.8574 12.5906C20.8455 12.6369 17.4325 12.6863 15.0594 15.0594C12.6863 17.4325 12.6523 20.8455 12.5906 23.8574C12.5659 25.4775 12.5412 27.1501 12.1216 28.1592C11.6679 29.2578 10.4644 30.5137 9.30102 31.7296C7.25504 33.8589 4.9375 36.2783 4.9375 39.5C4.9375 42.7217 7.25504 45.138 9.30102 47.2704C10.4644 48.4862 11.6679 49.7391 12.1216 50.8408C12.5412 51.8499 12.5659 53.5225 12.5906 55.1426C12.6369 58.1545 12.6863 61.5675 15.0594 63.9406C17.4325 66.3137 20.8455 66.3631 23.8574 66.4094C25.4775 66.4341 27.1501 66.4588 28.1592 66.8784C29.2578 67.3321 30.5137 68.5356 31.7296 69.699C33.8589 71.745 36.2783 74.0625 39.5 74.0625C42.7217 74.0625 45.138 71.745 47.2704 69.699C48.4862 68.5356 49.7391 67.3321 50.8408 66.8784C51.8499 66.4588 53.5225 66.4341 55.1426 66.4094C58.1545 66.3631 61.5675 66.3137 63.9406 63.9406C66.3137 61.5675 66.3631 58.1545 66.4094 55.1426C66.4341 53.5225 66.4588 51.8499 66.8784 50.8408C67.3321 49.7422 68.5356 48.4862 69.699 47.2704C71.745 45.1411 74.0625 42.7217 74.0625 39.5C74.0625 36.2783 71.745 33.862 69.699 31.7296ZM53.5904 33.8404L36.3091 51.1216C36.0799 51.3512 35.8076 51.5333 35.5079 51.6575C35.2082 51.7817 34.8869 51.8457 34.5625 51.8457C34.2381 51.8457 33.9168 51.7817 33.6171 51.6575C33.3174 51.5333 33.0451 51.3512 32.8159 51.1216L25.4096 43.7154C24.9464 43.2522 24.6861 42.6239 24.6861 41.9688C24.6861 41.3136 24.9464 40.6853 25.4096 40.2221C25.8728 39.7589 26.5011 39.4986 27.1562 39.4986C27.8114 39.4986 28.4397 39.7589 28.9029 40.2221L34.5625 45.8848L50.0971 30.3471C50.3265 30.1177 50.5988 29.9358 50.8985 29.8117C51.1982 29.6875 51.5194 29.6236 51.8438 29.6236C52.1681 29.6236 52.4893 29.6875 52.789 29.8117C53.0887 29.9358 53.361 30.1177 53.5904 30.3471C53.8198 30.5765 54.0017 30.8488 54.1258 31.1485C54.25 31.4482 54.3139 31.7694 54.3139 32.0938C54.3139 32.4181 54.25 32.7393 54.1258 33.039C54.0017 33.3387 53.8198 33.611 53.5904 33.8404Z"
                                 fill="white" />
                         </svg>
-                        <p class="text-sm md:text-base font-bold text-white tracking-widest uppercase whitespace-nowrap"
+                        <p class="text-sm md:text-base font-bold text-white tracking-widest whitespace-nowrap"
                             style="text-shadow: 0 1px 4px rgba(0,0,0,0.25);">
-                            Target Tercapai!
+                            Target Achieved!
                         </p>
                         <svg width="22" height="22" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg"
                             class="shrink-0 drop-shadow-sm">
@@ -153,25 +157,33 @@
                         </svg>
                     </div>
 
-                    <div class="flex px-30 w-full items-center justify-between text-white py-10">
+                    <div class="flex md:px-30 px-1 w-full items-center justify-around text-white md:py-10 py-0">
 
-                        <div class="flex flex-col items-center text-center h-50 gap-3">
-                            <span id="current-count" class="mt-auto text-[10rem] leading-none font-bold min-w-55">
+                        <div class="flex flex-col items-center text-center md:h-50 h-30 gap-3">
+                            <span id="current-count" class="mt-auto leading-none font-bold
+                                       text-7xl sm:text-8xl md:text-[10rem]
+                                       min-w-20 sm:min-w-28 md:min-w-55">
                                 0
                             </span>
-                            <span class="mt-2 text-sm uppercase tracking-wide opacity-80">
+                            <span class="mt-2 md:text-md text-sm tracking-wide opacity-80">
                                 current
                             </span>
                         </div>
 
-                        <div class="relative h-40 w-4 rotate-12 bg-white rounded-sm"></div>
+                        <div class="relative md:h-40 h-12 md:w-4 w-2 rotate-12 bg-white rounded-sm"></div>
 
-                        <div class="flex flex-col items-center text-center h-50 gap-3">
-                            <span class="mt-auto text-[5rem] font-medium leading-none border-b">
-                                <input type="number" id="target-value" value="33"
-                                    class="w-40 text-center bg-transparent text-white outline-none border-b-2 border-transparent focus:border-white/50 transition-colors [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none">
+                        <div class="flex flex-col items-center text-center md:h-50 h-30 gap-3">
+                            <span class="mt-auto font-medium leading-none border-b">
+                                <input type="number" id="target-value" value="33" class="text-4xl sm:text-5xl md:text-[5rem]
+                                           w-20 sm:w-28 md:w-40
+                                           text-center bg-transparent text-white outline-none
+                                           border-b-2 border-transparent focus:border-white/50
+                                           transition-colors
+                                           [appearance:textfield]
+                                           [&::-webkit-inner-spin-button]:appearance-none
+                                           [&::-webkit-outer-spin-button]:appearance-none">
                             </span>
-                            <span class="mt-2 text-sm uppercase tracking-wide opacity-80">
+                            <span class="mt-2 md:text-md text-sm tracking-wide opacity-80">
                                 target
                             </span>
                         </div>
