@@ -6,50 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ramadhan Coding Challenge</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="input.css">
 </head>
 <style>
-  @import url("https://fonts.cdnfonts.com/css/cinzel-decorative");
-  @import url("https://cdn.jsdelivr.net");
-
-  :root {
-    --cream: rgba(245, 239, 230, 1);
-    --green: rgba(46, 125, 90, 1);
-    --gold: rgba(198, 168, 91, 1);
-    --bg-color: #fbfae8;
-    --linear-color-1: linear-gradient(90deg, #D4AF37 0%, #F9E498 100%);
-    --caligraphy-font: "Cinzel Decorative", sans-serif;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    timeline-scope: --main-scroll;
-  }
-
-  @keyframes hide-nav {
-    from {
-      transform: translateY(0);
-    }
-
-    to {
-      transform: translateY(-100%);
-    }
-  }
-
-  .nav-auto-hide {
-    animation: hide-nav linear both;
-    animation-timeline: --main-scroll;
-    animation-range: 80px 500px;
-    z-index: 100;
-  }
-
-  .scroll-container {
-    scroll-timeline-name: --main-scroll;
-    scroll-behavior: smooth;
-  }
-
   [id] {
     scroll-margin-top: 60px;
   }
@@ -83,13 +42,14 @@
       </span>
 
       <div class="flex gap-8 text-sm font-medium text-(--green)">
-        <a class="relative after:absolute after:-bottom-1 after:left-0 after:h-0.5
-                after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full">
+        <a class="relative animate-underscore">
           Beranda
         </a>
-        <a class="relative after:absolute after:-bottom-1 after:left-0 after:h-0.5
-                after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full">
+        <a class="relative animate-underscore" href="doa.html">
           Doa
+        </a>
+        <a class="relative animate-underscore" href="dhikr.html">
+          Dhikr
         </a>
       </div>
     </nav>
@@ -99,9 +59,11 @@
     <div id="top"
       class="snap-start relative flex justify-center items-center z-10 h-screen px-6 md:px-20 lg:px-40 overflow-clip bg-(--bg-color)">
 
-      <img class="absolute z-10 h-full w-auto md:h-full md:w-full object-cover" src="./assets/bg-hero.png"
-        style="filter: drop-shadow(1px 10px 10px rgba(0, 0, 0, 0.5));">
-      <img class="absolute opacity-10 z-0 w-full h-full object-cover" src="./assets/golden-pattern.png">
+      <img class="absolute z-10 h-full w-auto md:h-full md:w-full object-cover will-change-transform"
+        src="./assets/bg-hero.png"
+        style="filter: drop-shadow(1px 10px 10px rgba(0, 0, 0, 0.5)); transform: translateZ(0);">
+      <img class="absolute opacity-10 z-0 w-full h-full object-cover will-change-transform"
+        src="./assets/golden-pattern.png" style="transform: translateZ(0);">
 
       <span class="flex flex-col items-center md:flex-row z-50 gap-4 md:gap-10 text-center md:text-left">
         <img class="h-32 w-32 md:h-64 md:w-64 lg:h-96 lg:w-96" src="./assets/moon.png"
@@ -140,7 +102,7 @@
             opacity: 1;
             position: relative;
           ">
-            <button id="btn-sahur" onclick="window.location.href='index.html#content-sahur'"
+            <button id="btn-sahur" onclick="window.location.href='#content-sahur'"
               class="px-8 md:px-16 lg:px-20 py-2 md:py-3 text-base md:text-xl lg:text-2xl font-semibold transition-all duration-300 cursor-pointer bg-white text-(--gold) group-hover:bg-(--gold) group-hover:text-white"
               style="
               border-radius: 46px;
@@ -160,7 +122,7 @@
             opacity: 1;
             position: relative;
           ">
-            <button id="btn-sahur" onclick="window.location.href='index.html#content-buka'"
+            <button id="btn-sahur" onclick="window.location.href='#content-buka'"
               class="px-8 md:px-16 lg:px-20 py-2 md:py-3 text-base md:text-xl lg:text-2xl font-semibold transition-all duration-300 cursor-pointer bg-white text-(--gold) group-hover:bg-(--gold) group-hover:text-white"
               style="
               border-radius: 46px;
@@ -284,40 +246,38 @@
                   <a class="self-end mt-10 text-gray-600 relative after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full transition-all duration-300 hover:text-(--gold)"
                     href="https://sunnah.com/tirmidhi:3458">Jami‘ at-Tirmidhi 3458 ↗</a>
                 </div>
-            </div>
-
-            <div class="flex flex-col gap-10 text-black/80" id="item-3">
-              <div class="flex flex-col gap-4">
-                <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">3. Seeking Forgiveness in the Last Third of the
-                  Night
-                </h2>
-                <span class="text-left">Suhoor coincides with the most spiritually potent segment of the night, the
-                  final third, known in the tradition as the time of Tahajjud. In rigorously authentic narrations, the
-                  Prophet ﷺ informed us that during this time Allah calls out in a manner befitting His Majesty: “Who
-                  is calling upon Me so that I may answer him? Who is asking Me so that I may give him? Who is seeking
-                  My forgiveness so that I may forgive him?” <br /> <br /> This is a sacred invitation. Before the
-                  Fajr
-                  adhan, let the tongue be moistened with Istighfar and the heart humbled in repentance. Seek
-                  forgiveness for yourself, your family, and the Ummah at large. Ramadan is a month of liberation from
-                  sin and renewal of spiritual life.</span>
-              </div>
-              <div
-                class="flex flex-col justify-center text-center border border-(--gold)/60 rounded-xl p-4 py-10 bg-white">
-                <div class="flex flex-col gap-10">
-                  <span class="text-2xl md:text-3xl lg:text-4xl font-bold" style="line-height: 1.8;">رَبَّنَا إِنَّنَا
-                    آمَنَّا فَاغْفِرْ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ النَّارِ</span>
-                  <span class="italic">Rabbana innana amanna faghfir lana dhunubana waqina ‘adhaban-nar.</span>
-                </div>
-                <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
-                <span class="self-center w-fit text-base md:text-xl">
-                  “Our Lord, indeed we have believed, so forgive us our sins and protect us from the punishment of the
-                  Fire.”
-                </span>
-                <a class="self-end mt-10 text-gray-600 relative after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full transition-all duration-300 hover:text-(--gold)"
-                  href="https://quran.com/3/16">Surah Aal ‘Imran 3:16 ↗</a>
-              </div>
               </article>
-
+              <article class="flex flex-col gap-10 text-black/80" id="item-3">
+                <div class="flex flex-col gap-4">
+                  <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">3. Seeking Forgiveness in the Last Third of the
+                    Night
+                  </h2>
+                  <span class="text-left">Suhoor coincides with the most spiritually potent segment of the night, the
+                    final third, known in the tradition as the time of Tahajjud. In rigorously authentic narrations, the
+                    Prophet ﷺ informed us that during this time Allah calls out in a manner befitting His Majesty: “Who
+                    is calling upon Me so that I may answer him? Who is asking Me so that I may give him? Who is seeking
+                    My forgiveness so that I may forgive him?” <br /> <br /> This is a sacred invitation. Before the
+                    Fajr
+                    adhan, let the tongue be moistened with Istighfar and the heart humbled in repentance. Seek
+                    forgiveness for yourself, your family, and the Ummah at large. Ramadan is a month of liberation from
+                    sin and renewal of spiritual life.</span>
+                </div>
+                <div
+                  class="flex flex-col justify-center text-center border border-(--gold)/60 rounded-xl p-4 py-10 bg-white">
+                  <div class="flex flex-col gap-10">
+                    <span class="text-2xl md:text-3xl lg:text-4xl font-bold" style="line-height: 1.8;">رَبَّنَا إِنَّنَا
+                      آمَنَّا فَاغْفِرْ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ النَّارِ</span>
+                    <span class="italic">Rabbana innana amanna faghfir lana dhunubana waqina ‘adhaban-nar.</span>
+                  </div>
+                  <div class="relative w-12 h-0.5 bg-[#D4AF37] self-center my-7"></div>
+                  <span class="self-center w-fit text-base md:text-xl">
+                    “Our Lord, indeed we have believed, so forgive us our sins and protect us from the punishment of the
+                    Fire.”
+                  </span>
+                  <a class="self-end mt-10 text-gray-600 relative after:absolute after:-bottom-0.5 after:left-0 after:h-0.5 after:w-0 after:bg-(--gold) after:transition-all hover:after:w-full transition-all duration-300 hover:text-(--gold)"
+                    href="https://quran.com/3/16">Surah Aal ‘Imran 3:16 ↗</a>
+                </div>
+              </article>
             </div>
           </div>
         </div>
@@ -467,7 +427,7 @@
 
               <article class="flex flex-col gap-10 text-black/80" id="item-7">
                 <div class="flex flex-col gap-4">
-                  <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">5. Dua After Finishing the Meal
+                  <h2 class="font-bold text-xl md:text-3xl lg:text-4xl">4. Dua After Finishing the Meal
                   </h2>
                   <p class="text-left">After completing your iftar meal, it is also Sunnah to express gratitude to
                     Allah for the provision. The Prophet (ﷺ) taught us this beautiful dua to say after eating:</p>
@@ -517,6 +477,7 @@
     </svg>
   </a>
 
+  <script src="nav.js"></script>
 
 </body>
 

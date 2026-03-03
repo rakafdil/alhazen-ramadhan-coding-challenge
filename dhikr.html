@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramadhan Coding Challenge</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="input.css">
+</head>
+<style>
+    [id] {
+        scroll-margin-top: 60px;
+    }
+
+    h1 {
+        font-family: "Cinzel Decorative", sans-serif;
+        line-height: 1.2;
+    }
+
+    h2,
+    p {
+        font-family: "Roboto Flex Variable", sans-serif;
+    }
+
+    button,
+    a.toggle-btn {
+        font-family: "Cinzel Decorative", sans-serif;
+    }
+</style>
+
+<body class="relative bg-(--bg-color) max-w-480 mx-auto">
+    <header>
+        <nav class="nav-auto-hide fixed top-0 left-1/2 -translate-x-1/2
+  w-full max-w-480
+  z-100 flex items-center justify-between
+  px-4 md:px-12 py-4
+  backdrop-blur-md bg-[rgba(245,239,230,0.75)]">
+            <span class="text-lg font-semibold tracking-wide text-(--green)"
+                style="font-family: 'Cinzel Decorative', sans-serif;">
+                Ramadhan
+            </span>
+
+            <div class="flex gap-8 text-sm font-medium text-(--green)">
+                <a class="relative animate-underscore">
+                    Beranda
+                </a>
+                <a class="relative animate-underscore" href="doa.html">
+                    Doa
+                </a>
+                <a class="relative animate-underscore" href="dhikr.html">
+                    Dhikr
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="scroll-container h-screen overflow-y-scroll snap-y snap-mandatory">
+        <div id="top"
+            class="snap-start relative flex justify-center items-center z-10 h-screen px-6 md:px-20 lg:px-40 overflow-clip bg-(--bg-color)">
+
+            <img class="absolute z-10 h-full w-auto md:h-full md:w-full object-cover will-change-transform"
+                src="./assets/bg-hero.png"
+                style="filter: drop-shadow(1px 10px 10px rgba(0, 0, 0, 0.5)); transform: translateZ(0);">
+            <img class="absolute opacity-10 z-0 w-full h-full object-cover will-change-transform"
+                src="./assets/golden-pattern.png" style="transform: translateZ(0);">
+
+            <span class="flex flex-col items-center md:flex-row z-50 gap-4 md:gap-10 text-center md:text-left">
+                <img class="h-32 w-32 md:h-64 md:w-64 lg:h-96 lg:w-96" src="./assets/moon.png"
+                    style="filter: drop-shadow(5px 10px 2px rgba(0, 0, 0, 0.5));" />
+                <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-(--green)"
+                    style="filter: drop-shadow(2px 1px 1px rgba(0, 0, 0, 0.5));">DHIKR COUNTER</h1>
+            </span>
+        </div>
+
+        <div class="snap-start relative flex flex-col min-h-screen px-4 md:px-10 lg:px-20 z-0"
+            style="scroll-padding-top: 80px;">
+            <span class="relative md:flex justify-between w-full z-10 hidden">
+                <span class="flex absolute left-0 -top-2" style="filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));">
+                    <img src="./assets/lamp.png" class="h-50" />
+                    <img src="./assets/star.png" class="relative h-50 -top-10" />
+                </span>
+                <span class="flex flex-row-reverse absolute right-0 -top-2"
+                    style="filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));">
+                    <img src="./assets/lamp.png" class="h-50" />
+                    <img src="./assets/star.png" class="transform -scale-x-100 relative h-50 -top-10" />
+                </span>
+            </span>
+
+            <div class="flex flex-col mt-0 lg:my-60">
+                <span class="flex self-end text-(--gold) font-semibold text-sm md:text-base"
+                    style="font-family: var(--caligraphy-font);">Ahad, 13 Ramadan 1447</span>
+
+                <section class="flex gap-5 self-center">
+                    <button id="prev-btn"
+                        class="scale-40 md:scale-80 cursor-pointer active:scale-85 transition-all duration-300">
+                        <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M67.0625 37C67.0625 53.6066 53.6066 67.0625 37 67.0625C20.3934 67.0625 6.9375 53.6066 6.9375 37C6.9375 20.3934 20.3934 6.9375 37 6.9375C53.6066 6.9375 67.0625 20.3934 67.0625 37ZM31.7246 37L43.5617 25.2785C44.6457 24.1945 44.6457 22.4168 43.5617 21.3328C42.4777 20.2488 40.7 20.2488 39.616 21.3328L25.8277 35.1645C24.7727 36.2195 24.7438 37.925 25.741 39.009L39.327 52.6383C39.8762 53.1875 40.5844 53.4621 41.307 53.4621C42.0152 53.4621 42.7379 53.1875 43.2727 52.6527C44.3566 51.5687 44.3711 49.8055 43.2727 48.707L31.7246 37Z"
+                                fill="#C6A85B" />
+                        </svg>
+                    </button>
+
+                    <span class="flex flex-col justify-center items-center">
+                        <p id="dhikr-arab" class="text-4xl md:text-5xl lg:text-8xl font-bold" style="line-height: 1.8;">
+                            سُبْحَانَ ٱللَّٰهِ
+                        </p>
+                        <p id="dhikr-latin" class="text-md md:text-xl lg:text-2xl font-bold italic">
+                            subḥānallāh
+                        </p>
+                        <p id="dhikr-mean" class="text-md md:text-xl lg:text-2xl lg:mt-4">
+                            “Glory be to Allah”
+                        </p>
+                    </span>
+
+                    <button id="next-btn"
+                        class="scale-40 md:scale-80 cursor-pointer active:scale-85 transition-all duration-300">
+                        <svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.9375 37C6.9375 53.6066 20.3934 67.0625 37 67.0625C53.6066 67.0625 67.0625 53.6066 67.0625 37C67.0625 20.3934 53.6066 6.9375 37 6.9375C20.3934 6.9375 6.9375 20.3934 6.9375 37ZM42.2754 37L30.4383 25.2785C29.3543 24.1945 29.3543 22.4168 30.4383 21.3328C31.5223 20.2488 33.3 20.2488 34.384 21.3328L48.1723 35.1645C49.2273 36.2195 49.2562 37.925 48.259 39.009L34.673 52.6383C34.1238 53.1875 33.4156 53.4621 32.693 53.4621C31.9848 53.4621 31.2621 53.1875 30.7273 52.6527C29.6434 51.5687 29.6289 49.8055 30.7273 48.707L42.2754 37Z"
+                                fill="#C6A85B" />
+                        </svg>
+                    </button>
+                </section>
+
+                <section class="relative flex flex-col self-center mt-20 max-w-3xl min-w-3xl rounded-2xl bg-[#319D6D] px-10 py-10"
+                    style="
+                    box-shadow:
+                        0 4px 6px rgba(0, 0, 0, 0.25),
+                        inset 0 4px 12px rgba(255, 255, 255, 0.25);
+                    ">
+                    <div id="notif-badge" class="animate-bounce flex justify-center items-center gap-2 absolute left-1/2 -translate-x-1/2 -top-7
+                         px-6 h-14 rounded-full
+                         bg-linear-to-r from-[#B48D3E] via-[#C9A050] to-[#D8BA7E]
+                         border-2 border-white/30
+                         ring-4 ring-[#B48D3E]/25"
+                        style="box-shadow: 0 6px 28px rgba(180,141,62,0.55), 0 2px 8px rgba(0,0,0,0.18);">
+                        <svg width="22" height="22" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="shrink-0 drop-shadow-sm">
+                            <path
+                                d="M69.699 31.7296C68.5356 30.5137 67.3321 29.2609 66.8784 28.1592C66.4588 27.1501 66.4341 25.4775 66.4094 23.8574C66.3631 20.8455 66.3137 17.4325 63.9406 15.0594C61.5675 12.6863 58.1545 12.6369 55.1426 12.5906C53.5225 12.5659 51.8499 12.5412 50.8408 12.1216C49.7422 11.6679 48.4862 10.4644 47.2704 9.30102C45.1411 7.25504 42.7217 4.9375 39.5 4.9375C36.2783 4.9375 33.862 7.25504 31.7296 9.30102C30.5137 10.4644 29.2609 11.6679 28.1592 12.1216C27.1562 12.5412 25.4775 12.5659 23.8574 12.5906C20.8455 12.6369 17.4325 12.6863 15.0594 15.0594C12.6863 17.4325 12.6523 20.8455 12.5906 23.8574C12.5659 25.4775 12.5412 27.1501 12.1216 28.1592C11.6679 29.2578 10.4644 30.5137 9.30102 31.7296C7.25504 33.8589 4.9375 36.2783 4.9375 39.5C4.9375 42.7217 7.25504 45.138 9.30102 47.2704C10.4644 48.4862 11.6679 49.7391 12.1216 50.8408C12.5412 51.8499 12.5659 53.5225 12.5906 55.1426C12.6369 58.1545 12.6863 61.5675 15.0594 63.9406C17.4325 66.3137 20.8455 66.3631 23.8574 66.4094C25.4775 66.4341 27.1501 66.4588 28.1592 66.8784C29.2578 67.3321 30.5137 68.5356 31.7296 69.699C33.8589 71.745 36.2783 74.0625 39.5 74.0625C42.7217 74.0625 45.138 71.745 47.2704 69.699C48.4862 68.5356 49.7391 67.3321 50.8408 66.8784C51.8499 66.4588 53.5225 66.4341 55.1426 66.4094C58.1545 66.3631 61.5675 66.3137 63.9406 63.9406C66.3137 61.5675 66.3631 58.1545 66.4094 55.1426C66.4341 53.5225 66.4588 51.8499 66.8784 50.8408C67.3321 49.7422 68.5356 48.4862 69.699 47.2704C71.745 45.1411 74.0625 42.7217 74.0625 39.5C74.0625 36.2783 71.745 33.862 69.699 31.7296ZM53.5904 33.8404L36.3091 51.1216C36.0799 51.3512 35.8076 51.5333 35.5079 51.6575C35.2082 51.7817 34.8869 51.8457 34.5625 51.8457C34.2381 51.8457 33.9168 51.7817 33.6171 51.6575C33.3174 51.5333 33.0451 51.3512 32.8159 51.1216L25.4096 43.7154C24.9464 43.2522 24.6861 42.6239 24.6861 41.9688C24.6861 41.3136 24.9464 40.6853 25.4096 40.2221C25.8728 39.7589 26.5011 39.4986 27.1562 39.4986C27.8114 39.4986 28.4397 39.7589 28.9029 40.2221L34.5625 45.8848L50.0971 30.3471C50.3265 30.1177 50.5988 29.9358 50.8985 29.8117C51.1982 29.6875 51.5194 29.6236 51.8438 29.6236C52.1681 29.6236 52.4893 29.6875 52.789 29.8117C53.0887 29.9358 53.361 30.1177 53.5904 30.3471C53.8198 30.5765 54.0017 30.8488 54.1258 31.1485C54.25 31.4482 54.3139 31.7694 54.3139 32.0938C54.3139 32.4181 54.25 32.7393 54.1258 33.039C54.0017 33.3387 53.8198 33.611 53.5904 33.8404Z"
+                                fill="white" />
+                        </svg>
+                        <p class="text-sm md:text-base font-bold text-white tracking-widest uppercase whitespace-nowrap"
+                            style="text-shadow: 0 1px 4px rgba(0,0,0,0.25);">
+                            Target Tercapai!
+                        </p>
+                        <svg width="22" height="22" viewBox="0 0 79 79" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            class="shrink-0 drop-shadow-sm">
+                            <path
+                                d="M69.699 31.7296C68.5356 30.5137 67.3321 29.2609 66.8784 28.1592C66.4588 27.1501 66.4341 25.4775 66.4094 23.8574C66.3631 20.8455 66.3137 17.4325 63.9406 15.0594C61.5675 12.6863 58.1545 12.6369 55.1426 12.5906C53.5225 12.5659 51.8499 12.5412 50.8408 12.1216C49.7422 11.6679 48.4862 10.4644 47.2704 9.30102C45.1411 7.25504 42.7217 4.9375 39.5 4.9375C36.2783 4.9375 33.862 7.25504 31.7296 9.30102C30.5137 10.4644 29.2609 11.6679 28.1592 12.1216C27.1562 12.5412 25.4775 12.5659 23.8574 12.5906C20.8455 12.6369 17.4325 12.6863 15.0594 15.0594C12.6863 17.4325 12.6523 20.8455 12.5906 23.8574C12.5659 25.4775 12.5412 27.1501 12.1216 28.1592C11.6679 29.2578 10.4644 30.5137 9.30102 31.7296C7.25504 33.8589 4.9375 36.2783 4.9375 39.5C4.9375 42.7217 7.25504 45.138 9.30102 47.2704C10.4644 48.4862 11.6679 49.7391 12.1216 50.8408C12.5412 51.8499 12.5659 53.5225 12.5906 55.1426C12.6369 58.1545 12.6863 61.5675 15.0594 63.9406C17.4325 66.3137 20.8455 66.3631 23.8574 66.4094C25.4775 66.4341 27.1501 66.4588 28.1592 66.8784C29.2578 67.3321 30.5137 68.5356 31.7296 69.699C33.8589 71.745 36.2783 74.0625 39.5 74.0625C42.7217 74.0625 45.138 71.745 47.2704 69.699C48.4862 68.5356 49.7391 67.3321 50.8408 66.8784C51.8499 66.4588 53.5225 66.4341 55.1426 66.4094C58.1545 66.3631 61.5675 66.3137 63.9406 63.9406C66.3137 61.5675 66.3631 58.1545 66.4094 55.1426C66.4341 53.5225 66.4588 51.8499 66.8784 50.8408C67.3321 49.7422 68.5356 48.4862 69.699 47.2704C71.745 45.1411 74.0625 42.7217 74.0625 39.5C74.0625 36.2783 71.745 33.862 69.699 31.7296ZM53.5904 33.8404L36.3091 51.1216C36.0799 51.3512 35.8076 51.5333 35.5079 51.6575C35.2082 51.7817 34.8869 51.8457 34.5625 51.8457C34.2381 51.8457 33.9168 51.7817 33.6171 51.6575C33.3174 51.5333 33.0451 51.3512 32.8159 51.1216L25.4096 43.7154C24.9464 43.2522 24.6861 42.6239 24.6861 41.9688C24.6861 41.3136 24.9464 40.6853 25.4096 40.2221C25.8728 39.7589 26.5011 39.4986 27.1562 39.4986C27.8114 39.4986 28.4397 39.7589 28.9029 40.2221L34.5625 45.8848L50.0971 30.3471C50.3265 30.1177 50.5988 29.9358 50.8985 29.8117C51.1982 29.6875 51.5194 29.6236 51.8438 29.6236C52.1681 29.6236 52.4893 29.6875 52.789 29.8117C53.0887 29.9358 53.361 30.1177 53.5904 30.3471C53.8198 30.5765 54.0017 30.8488 54.1258 31.1485C54.25 31.4482 54.3139 31.7694 54.3139 32.0938C54.3139 32.4181 54.25 32.7393 54.1258 33.039C54.0017 33.3387 53.8198 33.611 53.5904 33.8404Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+
+                    <div class="flex px-30 w-full items-center justify-between text-white py-10">
+
+                        <div class="flex flex-col items-center text-center h-50 gap-3">
+                            <span id="current-count" class="mt-auto text-[10rem] leading-none font-bold min-w-55">
+                                0
+                            </span>
+                            <span class="mt-2 text-sm uppercase tracking-wide opacity-80">
+                                current
+                            </span>
+                        </div>
+
+                        <div class="relative h-40 w-4 rotate-12 bg-white rounded-sm"></div>
+
+                        <div class="flex flex-col items-center text-center h-50 gap-3">
+                            <span class="mt-auto text-[5rem] font-medium leading-none border-b">
+                                <input type="number" id="target-value" value="33"
+                                    class="w-40 text-center bg-transparent text-white outline-none border-b-2 border-transparent focus:border-white/50 transition-colors [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none">
+                            </span>
+                            <span class="mt-2 text-sm uppercase tracking-wide opacity-80">
+                                target
+                            </span>
+                        </div>
+                    </div>
+                    <span class="relative mt-5">
+                        <div id="progress-bar" class="absolute z-10 bg-white h-2 rounded-full" style="width: 0%;"></div>
+                        <div class="absolute bg-[#87FFCA] w-full h-2 rounded-full"></div>
+                    </span>
+                </section>
+
+                <div class="flex gap-6 justify-center items-center mt-8">
+                    <button id="decrement-btn" class="group flex items-center justify-center w-16 h-16 rounded-full
+                               border-2 border-[#B48D3E]/60 bg-white/10 backdrop-blur-sm
+                               text-[#B48D3E] cursor-pointer
+                               hover:bg-[#B48D3E]/10 hover:border-[#B48D3E]
+                               active:scale-90 transition-all duration-200"
+                        style="box-shadow: 0 2px 12px rgba(180,141,62,0.15);">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="#B48D3E" stroke-width="2.5" stroke-linecap="round" />
+                        </svg>
+                    </button>
+
+                    <button id="count-btn" class="group relative flex items-center justify-center w-28 h-28 rounded-full cursor-pointer
+                               active:scale-90 transition-all duration-200" style="background: linear-gradient(135deg, #B48D3E, #D8BA7E);
+                               box-shadow: 0 8px 32px rgba(180,141,62,0.45), 0 2px 8px rgba(0,0,0,0.15),
+                                           inset 0 1px 0 rgba(255,255,255,0.3);">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 5V19M5 12H19" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                        </svg>
+                    </button>
+
+                    <button id="reset-btn" class="group flex items-center justify-center w-16 h-16 rounded-full
+                               border-2 border-[#319D6D]/50 bg-white/10 backdrop-blur-sm
+                               text-[#319D6D] cursor-pointer
+                               hover:bg-[#319D6D]/10 hover:border-[#319D6D]
+                               active:scale-90 active:rotate-90 rotate-0 transition-all duration-200"
+                        style="box-shadow: 0 2px 12px rgba(49,157,109,0.15);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12C3 7.03 7.03 3 12 3C15.47 3 18.47 4.97 20 7.85" stroke="#319D6D"
+                                stroke-width="2.2" stroke-linecap="round" />
+                            <path d="M21 12C21 16.97 16.97 21 12 21C8.53 21 5.53 19.03 4 16.15" stroke="#319D6D"
+                                stroke-width="2.2" stroke-linecap="round" />
+                            <path d="M17 8H20.5V4.5" stroke="#319D6D" stroke-width="2.2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M7 16H3.5V19.5" stroke="#319D6D" stroke-width="2.2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <footer
+            class="snap-start relative flex justify-between items-end overflow-hidden bg-(--bg-color) border-t border-(--gold)/40 px-10 md:px-20 pb-0">
+            <div class="flex flex-col gap-2 pb-10 z-10">
+                <span class="text-xs md:text-sm font-medium text-(--gold)/70 tracking-widest uppercase"
+                    style="font-family: var(--caligraphy-font);">Crafted with sincerity</span>
+                <h1 class="font-bold text-2xl md:text-4xl text-(--green)">
+                    Muhammad Raka<br />Fadillah
+                </h1>
+                <span class="text-sm text-black/40 mt-1">Ramadhan Coding Challenge &copy; 1447 H</span>
+            </div>
+            <img class="h-48 md:h-64 lg:h-80 w-auto object-contain self-end opacity-80" src="./assets/masjid.png" />
+        </footer>
+    </main>
+
+    <a href="#top"
+        class="fixed bottom-6 right-6 z-200 flex items-center justify-center w-12 h-12 rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
+        style="background: var(--linear-color-1);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+    </a>
+
+    <script src="nav.js"></script>
+    <script>
+        const dhikr = [
+            {
+                latin: "Subḥānallāh",
+                arab: "سُبْحَانَ ٱللَّٰهِ",
+                meaning: "Glory be to Allah"
+            },
+            {
+                latin: "Al-ḥamdu lillāh",
+                arab: "ٱلْحَمْدُ لِلَّٰهِ",
+                meaning: "All praise is due to Allah"
+            },
+            {
+                latin: "Allāhu Akbar",
+                arab: "ٱللَّٰهُ أَكْبَرُ",
+                meaning: "Allah is the Greatest"
+            },
+            {
+                latin: "Astaghfirullāh",
+                arab: "أَسْتَغْفِرُ ٱللَّٰه",
+                meaning: "I seek forgiveness from Allah"
+            }
+        ];
+
+        let index = 0;
+        let count = 0;
+        let target = 1;
+
+        const countEl = document.getElementById("current-count");
+        const targetInput = document.getElementById("target-value");
+
+        const arabEl = document.getElementById("dhikr-arab");
+        const latinEl = document.getElementById("dhikr-latin");
+        const meanEl = document.getElementById("dhikr-mean");
+
+        const progressEl = document.getElementById("progress-bar");
+        const notifEl = document.getElementById("notif-badge");
+
+        const prevBtn = document.getElementById("prev-btn");
+        const nextBtn = document.getElementById("next-btn");
+        const incBtn = document.getElementById("count-btn");
+        const decBtn = document.getElementById("decrement-btn");
+        const resetBtn = document.getElementById("reset-btn");
+
+        function clamp(num, min, max) {
+            return Math.min(Math.max(num, min), max);
+        }
+
+        function readTarget() {
+            const value = Number(targetInput?.value);
+            target = value > 0 ? value : 1;
+        }
+        function renderDhikr() {
+            const item = dhikr[index];
+            arabEl.textContent = item.arab;
+            latinEl.textContent = item.latin;
+            meanEl.textContent = `"${item.meaning}"`;
+        }
+
+        function renderCount() {
+            if (countEl) countEl.textContent = count;
+
+            if (!progressEl) return;
+
+            const percent = clamp((count / target) * 100, 0, 100);
+            progressEl.style.width = `${percent}%`;
+
+            if (percent == 100) {
+                notifEl.classList.remove("hidden")
+            } else {
+                notifEl.classList.add("hidden")
+            }
+        }
+
+        function updateCount(newValue) {
+            count = Math.max(0, newValue);
+            renderCount();
+        }
+
+        function resetDhikr() {
+            count = 0;
+            renderCount();
+            renderDhikr();
+        }
+
+        prevBtn?.addEventListener("click", () => {
+            index = (index - 1 + dhikr.length) % dhikr.length;
+            resetDhikr();
+        });
+
+        nextBtn?.addEventListener("click", () => {
+            index = (index + 1) % dhikr.length;
+            resetDhikr();
+        });
+
+        incBtn?.addEventListener("click", () => updateCount(count + 1));
+        decBtn?.addEventListener("click", () => updateCount(count - 1));
+        resetBtn?.addEventListener("click", () => updateCount(0));
+
+        targetInput?.addEventListener("change", () => {
+            readTarget();
+            renderCount();
+        });
+
+        readTarget();
+        renderDhikr();
+        renderCount();
+
+    </script>
+</body>
+
+</html>

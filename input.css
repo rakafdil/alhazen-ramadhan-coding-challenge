@@ -1,1 +1,54 @@
 @import "tailwindcss";
+
+@import url("https://fonts.cdnfonts.com/css/cinzel-decorative");
+@import url("https://cdn.jsdelivr.net");
+
+:root {
+  --cream: rgba(245, 239, 230, 1);
+  --green: rgba(46, 125, 90, 1);
+  --gold: rgba(198, 168, 91, 1);
+  --bg-color: #fbfae8;
+  --linear-color-1: linear-gradient(90deg, #d4af37 0%, #f9e498 100%);
+  --caligraphy-font: "Cinzel Decorative", sans-serif;
+  --main-font: "Roboto Flex Variable", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.nav-auto-hide {
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+.nav-auto-hide.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.scroll-container {
+  scroll-behavior: smooth;
+}
+
+.animate-underscore {
+  position: relative;
+}
+
+.animate-underscore::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  height: 0.125rem;
+  width: 0;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.animate-underscore:hover::after {
+  width: 100%;
+}
+/* 
+.hidden {
+  display: none;
+} */
